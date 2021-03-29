@@ -7,15 +7,15 @@ import com.mrivanplays.skins.core.SkinsPlugin;
 
 public class SkinsProtocolSupport implements SkinsPlugin {
 
-  private SkinsApi api;
+    private SkinsApi api;
 
-  @Override
-  public void enable(InitializationData initializationData) {
-    api = new NoDSSApi(initializationData);
-  }
+    @Override
+    public void enable(InitializationData initializationData) {
+        api = new NoDSSApi(initializationData);
+    }
 
-  @Override
-  public SkinsApi getApi() {
-    return api;
-  }
+    @Override
+    public SkinsApi getApi() {
+        return api;
+    }
 }

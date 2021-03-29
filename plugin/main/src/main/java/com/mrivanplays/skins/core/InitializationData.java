@@ -4,48 +4,49 @@ import com.mrivanplays.skins.api.DataProvider;
 import com.mrivanplays.skins.api.MojangResponse;
 import com.mrivanplays.skins.api.SkinsVersionInfo;
 import com.mrivanplays.skins.core.SkullItemBuilderImpl.SkullItemBuilderData;
+import org.bukkit.inventory.ItemStack;
+
 import java.io.File;
 import java.util.function.Function;
-import org.bukkit.inventory.ItemStack;
 
 public class InitializationData {
 
-  private final File dataFolder;
-  private final Function<SkullItemBuilderData, ItemStack> itemBuilderTransformer;
-  private final Function<ItemStack, MojangResponse> skullOwnerTransformer;
-  private DataProvider dataProvider;
-  private SkinsVersionInfo versionInfo;
+    private final File dataFolder;
+    private final Function<SkullItemBuilderData, ItemStack> itemBuilderTransformer;
+    private final Function<ItemStack, MojangResponse> skullOwnerTransformer;
+    private final DataProvider dataProvider;
+    private final SkinsVersionInfo versionInfo;
 
-  public InitializationData(
-      File dataFolder,
-      Function<SkullItemBuilderData, ItemStack> itemBuilderTransformer,
-      Function<ItemStack, MojangResponse> skullOwnerTransformer,
-      DataProvider dataProvider,
-      SkinsVersionInfo versionInfo) {
-    this.dataFolder = dataFolder;
-    this.itemBuilderTransformer = itemBuilderTransformer;
-    this.skullOwnerTransformer = skullOwnerTransformer;
-    this.dataProvider = dataProvider;
-    this.versionInfo = versionInfo;
-  }
+    public InitializationData(
+            File dataFolder,
+            Function<SkullItemBuilderData, ItemStack> itemBuilderTransformer,
+            Function<ItemStack, MojangResponse> skullOwnerTransformer,
+            DataProvider dataProvider,
+            SkinsVersionInfo versionInfo) {
+        this.dataFolder = dataFolder;
+        this.itemBuilderTransformer = itemBuilderTransformer;
+        this.skullOwnerTransformer = skullOwnerTransformer;
+        this.dataProvider = dataProvider;
+        this.versionInfo = versionInfo;
+    }
 
-  public File getDataFolder() {
-    return dataFolder;
-  }
+    public File getDataFolder() {
+        return dataFolder;
+    }
 
-  public Function<SkullItemBuilderData, ItemStack> getItemBuilderTransformer() {
-    return itemBuilderTransformer;
-  }
+    public Function<SkullItemBuilderData, ItemStack> getItemBuilderTransformer() {
+        return itemBuilderTransformer;
+    }
 
-  public Function<ItemStack, MojangResponse> getSkullOwnerTransformer() {
-    return skullOwnerTransformer;
-  }
+    public Function<ItemStack, MojangResponse> getSkullOwnerTransformer() {
+        return skullOwnerTransformer;
+    }
 
-  public DataProvider getDataProvider() {
-    return dataProvider;
-  }
+    public DataProvider getDataProvider() {
+        return dataProvider;
+    }
 
-  public SkinsVersionInfo getVersionInfo() {
-    return versionInfo;
-  }
+    public SkinsVersionInfo getVersionInfo() {
+        return versionInfo;
+    }
 }

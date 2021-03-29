@@ -2,7 +2,9 @@
 ![license](https://img.shields.io/github/license/MrIvanPlays/Skins.svg?style=for-the-badge)
 ![issues](https://img.shields.io/github/issues/MrIvanPlays/Skins.svg?style=for-the-badge)
 [![support](https://img.shields.io/discord/493674712334073878.svg?colorB=Blue&logo=discord&label=Support&style=for-the-badge)](https://mrivanplays.com/discord)
+
 # Skins
+
 Plugin created by MrIvanPlays
 
 Supports 1.12.x, 1.13.2, 1.14.x, 1.15.x
@@ -10,21 +12,24 @@ Supports 1.12.x, 1.13.2, 1.14.x, 1.15.x
 Spigot page: click [here](https://www.spigotmc.org/resources/skins-1-13-2-1-14-x.70829/)
 
 ## Development builds
-Usually development builds are not recommended for a big server as they may contain
-a bunch of bugs. It is better to use a stable build which you can find at
+
+Usually development builds are not recommended for a big server as they may contain a bunch of bugs. It is better to use
+a stable build which you can find at
 [spigot](https://www.spigotmc.org/resources/skins-1-13-2-1-14-x.70829/)
 
-Retrieving a development build can be easily done by cloning the repository, then
-cd into the base directory, then run `mvn package`, retrieving jar from 
+Retrieving a development build can be easily done by cloning the repository, then cd into the base directory, then
+run `mvn package`, retrieving jar from
 `plugin/bootstrap/target` or downloading jar from CI located [here](https://ci.mrivanplays.com/job/Skins/)
 
 ## Developer API
 
 #### Installation:
 
-NOTE: For older versions that 1.1.6-SNAPSHOT, you should use the old bintray repo url (https://dl.bintray.com/mrivanplaysbg/mrivanplays/) in order to achieve download.
+NOTE: For older versions that 1.1.6-SNAPSHOT, you should use the old bintray repo
+url (https://dl.bintray.com/mrivanplaysbg/mrivanplays/) in order to achieve download.
 
-Maven: 
+Maven:
+
 ```html
 <repositories>
      <repository>
@@ -44,6 +49,7 @@ Maven:
 ```
 
 Gradle:
+
 ```groovy
 repositories {
   maven {
@@ -57,6 +63,7 @@ dependencies {
 ```
 
 #### Obtaining api instance
+
 ```java
 public class MyMainClass extends JavaPlugin {
 

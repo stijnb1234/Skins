@@ -9,29 +9,23 @@ import org.bukkit.event.player.PlayerLoginEvent;
 
 public class DefaultSkinSetListener implements Listener {
 
-  private final SkinsBukkitPlugin plugin;
+    private final SkinsBukkitPlugin plugin;
 
-  public DefaultSkinSetListener(SkinsBukkitPlugin plugin) {
-    this.plugin = plugin;
-  }
-
-  @EventHandler(priority = EventPriority.HIGHEST)
-  public void onPlayerJoin(PlayerJoinEvent event) {
-    if (SupportedVersions.getCurrent().getProtocolVersion()
-        < SupportedVersions.v1_16_R1.getProtocolVersion()) {
-      plugin
-          .getApi()
-          .setSkin(event.getPlayer(), plugin.getApi().getSetSkinResponse(event.getPlayer()));
+    public DefaultSkinSetListener(SkinsBukkitPlugin plugin) {
+        this.plugin = plugin;
     }
-  }
 
-  @EventHandler(priority = EventPriority.HIGHEST)
-  public void onPlayerLogin(PlayerLoginEvent event) {
-    if (SupportedVersions.getCurrent().getProtocolVersion()
-        >= SupportedVersions.v1_16_R1.getProtocolVersion()) {
-      plugin
-          .getApi()
-          .setSkin(event.getPlayer(), plugin.getApi().getSetSkinResponse(event.getPlayer()));
+    @EventHandler(priority = EventPriority.HIGHEST)
+    public void onPlayerJoin(PlayerJoinEvent event) {
+        if (SupportedVersions.getCurrent().getProtocolVersion() < SupportedVersions.v1_16_R1.getProtocolVersion()) {
+            plugin.getApi().setSkin(event.getPlayer(), plugin.getApi().getSetSkinResponse(event.getPlayer()));
+        }
     }
-  }
+
+    @EventHandler(priority = EventPriority.HIGHEST)
+    public void onPlayerLogin(PlayerLoginEvent event) {
+        if (SupportedVersions.getCurrent().getProtocolVersion() >= SupportedVersions.v1_16_R1.getProtocolVersion()) {
+            plugin.getApi().setSkin(event.getPlayer(), plugin.getApi().getSetSkinResponse(event.getPlayer()));
+        }
+    }
 }

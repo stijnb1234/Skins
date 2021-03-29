@@ -6,15 +6,15 @@ import com.mrivanplays.skins.core.SkinsPlugin;
 
 public class SkinsPaper implements SkinsPlugin {
 
-  private PaperSkinsApi api;
+    private PaperSkinsApi api;
 
-  @Override
-  public void enable(InitializationData initializationData) {
-    api = new PaperSkinsApi(initializationData);
-  }
+    @Override
+    public void enable(InitializationData initializationData) {
+        api = new PaperSkinsApi(initializationData);
+    }
 
-  @Override
-  public SkinsApi getApi() {
-    return api;
-  }
+    @Override
+    public SkinsApi getApi() {
+        return api;
+    }
 }

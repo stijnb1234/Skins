@@ -6,15 +6,15 @@ import com.mrivanplays.skins.core.SkinsPlugin;
 
 public class SkinsBukkit implements SkinsPlugin {
 
-  private SkinsApi skinsApi;
+    private SkinsApi skinsApi;
 
-  @Override
-  public void enable(InitializationData initializationData) {
-    skinsApi = new BukkitSkinsApi(initializationData);
-  }
+    @Override
+    public void enable(InitializationData initializationData) {
+        skinsApi = new BukkitSkinsApi(initializationData);
+    }
 
-  @Override
-  public SkinsApi getApi() {
-    return skinsApi;
-  }
+    @Override
+    public SkinsApi getApi() {
+        return skinsApi;
+    }
 }

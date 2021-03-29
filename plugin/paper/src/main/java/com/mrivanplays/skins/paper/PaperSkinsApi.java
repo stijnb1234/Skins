@@ -9,14 +9,14 @@ import org.bukkit.entity.Player;
 
 public class PaperSkinsApi extends AbstractSkinsApi {
 
-  public PaperSkinsApi(InitializationData initializationData) {
-    super(initializationData);
-  }
+    public PaperSkinsApi(InitializationData initializationData) {
+        super(initializationData);
+    }
 
-  @Override
-  protected void setNPCSkin(Player player, Skin skin) {
-    PlayerProfile profile = player.getPlayerProfile();
-    profile.setProperty(new ProfileProperty("textures", skin.getTexture(), skin.getSignature()));
-    player.setPlayerProfile(profile);
-  }
+    @Override
+    protected void setNPCSkin(Player player, Skin skin) {
+        PlayerProfile profile = player.getPlayerProfile();
+        profile.setProperty(new ProfileProperty("textures", skin.getTexture(), skin.getSignature()));
+        player.setPlayerProfile(profile);
+    }
 }

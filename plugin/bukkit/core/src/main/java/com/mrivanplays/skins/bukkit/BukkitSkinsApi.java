@@ -8,12 +8,12 @@ import org.bukkit.entity.Player;
 
 public class BukkitSkinsApi extends AbstractSkinsApi {
 
-  public BukkitSkinsApi(InitializationData initializationData) {
-    super(initializationData);
-  }
+    public BukkitSkinsApi(InitializationData initializationData) {
+        super(initializationData);
+    }
 
-  @Override
-  protected void setNPCSkin(Player player, Skin skin) {
-    SkinSetterHandler.getSkinSetter().setSkin(player, skin);
-  }
+    @Override
+    protected void setNPCSkin(Player player, Skin skin) {
+        SkinSetterHandler.getSkinSetter().setSkin(player, skin);
+    }
 }

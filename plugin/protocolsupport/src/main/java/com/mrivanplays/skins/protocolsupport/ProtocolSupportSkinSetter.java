@@ -11,20 +11,20 @@ import protocolsupport.api.utils.ProfileProperty;
 
 public class ProtocolSupportSkinSetter implements Listener {
 
-  private final AbstractSkinsApi skinsApi;
+    private final AbstractSkinsApi skinsApi;
 
-  public ProtocolSupportSkinSetter(AbstractSkinsApi skinsApi) {
-    this.skinsApi = skinsApi;
-  }
-
-  @EventHandler
-  public void on(PlayerProfileCompleteEvent event) {
-    Profile profile = event.getConnection().getProfile();
-    MojangResponse response = skinsApi.getSetSkinResponse(profile.getName(), profile.getUUID());
-    if (response.getSkin().isPresent()) {
-      Skin skin = response.getSkin().get();
-      event.addProperty(new ProfileProperty("textures", skin.getTexture(), skin.getSignature()));
-      skinsApi.modifyStoredSkin(profile.getUUID(), skin);
+    public ProtocolSupportSkinSetter(AbstractSkinsApi skinsApi) {
+        this.skinsApi = skinsApi;
     }
-  }
+
+    @EventHandler
+    public void on(PlayerProfileCompleteEvent event) {
+        Profile profile = event.getConnection().getProfile();
+        MojangResponse response = skinsApi.getSetSkinResponse(profile.getName(), profile.getUUID());
+        if (response.getSkin().isPresent()) {
+            Skin skin = response.getSkin().get();
+            event.addProperty(new ProfileProperty("textures", skin.getTexture(), skin.getSignature()));
+            skinsApi.modifyStoredSkin(profile.getUUID(), skin);
+        }
+    }
 }
